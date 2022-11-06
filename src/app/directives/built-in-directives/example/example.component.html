@@ -1,0 +1,45 @@
+<h2 *ngIf="printable">{{ message }}</h2>
+conent
+<button (click)="printable = !printable"> toggle message </button>
+<div *ngIf="contacts">
+  <div *ngFor="let contact of contacts">
+    <h3>{{ contact.name}}</h3>
+    <img *ngIf="contact.avatar?.url" [src]="contact.avatar?.url" alt="">
+  </div>
+</div>
+
+<div>
+  <button (click)="changeTab(1)" > tab 1</button>
+  <button (click)="changeTab(2)"> tab 2</button>
+  <button (click)="changeTab(3)"> tab 3</button>
+</div>
+click to change color
+<div [ngSwitch]="index">
+   <ng-template [ngSwitchCase]="1">
+
+    <div (click) ="flag_color = !flag_color"[style.color]="flag_color ? 'green': 'red'">
+      table content 1 https://www.youtube.com/watch?v=KxvyaY2OY6s&list=PL73F-X98U6DskOtN8C7OSz0XYAdhybRn9&index=2
+    </div>
+   </ng-template>
+   <ng-template [ngSwitchCase]="2">
+   <div (click) ="flag_color = !flag_color"[style.color]="flag_color ? 'green': 'red'">
+      table content 2https://www.youtube.com/watch?v=KxvyaY2OY6s&list=PL73F-X98U6DskOtN8C7OSz0XYAdhybRn9&index=2
+    </div>
+   </ng-template>
+   <ng-template [ngSwitchCase]="3">
+   <div (click) ="flag_color = !flag_color" [ngStyle]="{'font-style':flag_color ? 'italic':'normal',
+                                                        'font-size': flag_color ? '24px'   : '12px'}">
+      table content 3 https://www.youtube.com/watch?v=KxvyaY2OY6s&list=PL73F-X98U6DskOtN8C7OSz0XYAdhybRn9&index=2
+    </div>
+   </ng-template>
+</div>ll
+
+<div>
+  <input type="text" (change)="onClick($event)" id=" ">
+  <button   >button</button>
+</div>
+<ul>
+  <li *ngFor = "let message of messages">
+    {{ message }}
+  </li>
+</ul>
