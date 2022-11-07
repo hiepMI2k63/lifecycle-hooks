@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./example.component.css']
 })
 export class ExampleComponent implements OnInit {
-
+  name:string ="";
   message: string  = "say hi";
   printable = false;
   index:number = 1;
